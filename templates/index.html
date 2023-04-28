@@ -10,13 +10,20 @@
 </head>
 <body>
     <div class="mx-auto col-6 mt-5">
-        <table class="table text-center border border-primary">
-            <thead class="bg-dark text-white">
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Full Name</th>
+        <table class="table text-center table-bordered table-dark border-danger" >
+            <thead class="bg-light text-warning">
+                <th class="col">First Name</th>
+                <th class="col">Last Name</th>
+                <th class="col">Full Name</th>
             </thead>
             <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{user['first_name']}}</td>
+                    <td>{{user['last_name']}}</td>
+                    <td>{{user['first_name'] + ' ' + user['last_name']}}</td>
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
